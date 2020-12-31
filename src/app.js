@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
-
+ 
 const app = express();
 const publicDirectoryPath = path.join(__dirname, '../public');
 
@@ -31,6 +31,7 @@ app.get('/weather', (req, res) => {
                 return res.send({error})
             }
             res.send(forecastData);
+
         })
     })
     // res.send( {
